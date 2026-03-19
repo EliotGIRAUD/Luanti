@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="0.55" stop-color="#171a2e"/>
+      <stop offset="1" stop-color="#0a0f1c"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="20%" cy="10%" r="70%">
+      <stop offset="0" stop-color="#4cc9f0" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#4cc9f0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="85%" cy="20%" r="70%">
+      <stop offset="0" stop-color="#f72585" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#f72585" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="grain" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" />
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 0
+        0 0 0 0 0
+        0 0 0 0 0
+        0 0 0 0.12 0"/>
+    </filter>
+    <linearGradient id="blockTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4cc9f0"/>
+      <stop offset="1" stop-color="#b5179e"/>
+    </linearGradient>
+    <linearGradient id="blockSide" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#24304a"/>
+      <stop offset="1" stop-color="#151a2b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#glow1)"/>
+  <rect width="1200" height="900" fill="url(#glow2)"/>
+  <rect width="1200" height="900" filter="url(#grain)" opacity="0.55"/>
+
+  <!-- Voxel-ish blocks (pure SVG placeholder) -->
+  <g transform="translate(120,170)" opacity="0.95">
+    <g filter="url(#soft)" opacity="0.35">
+      <path d="M420 90 L600 0 L780 90 L600 180 Z" fill="#4cc9f0"/>
+    </g>
+
+    <!-- ground -->
+    <path d="M80 350 L520 130 L980 350 L540 570 Z" fill="#0f1526" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+
+    <!-- blocks row -->
+    <g transform="translate(230,210)">
+      <g transform="translate(0,120)">
+        <polygon points="0,70 120,0 240,70 120,140" fill="url(#blockTop)"/>
+        <polygon points="0,70 0,210 120,280 120,140" fill="url(#blockSide)"/>
+        <polygon points="240,70 240,210 120,280 120,140" fill="#1b2338"/>
+      </g>
+      <g transform="translate(250,40)">
+        <polygon points="0,70 120,0 240,70 120,140" fill="#2ad3b8"/>
+        <polygon points="0,70 0,210 120,280 120,140" fill="#1a2840"/>
+        <polygon points="240,70 240,210 120,280 120,140" fill="#121b30"/>
+      </g>
+      <g transform="translate(500,120)">
+        <polygon points="0,70 120,0 240,70 120,140" fill="#f72585"/>
+        <polygon points="0,70 0,210 120,280 120,140" fill="#2a1d3a"/>
+        <polygon points="240,70 240,210 120,280 120,140" fill="#1a1425"/>
+      </g>
+    </g>
+
+    <!-- tiny tower -->
+    <g transform="translate(650,220)">
+      <polygon points="0,60 70,20 140,60 70,100" fill="#ffd166" opacity="0.9"/>
+      <polygon points="0,60 0,200 70,240 70,100" fill="#3a2a1a" opacity="0.9"/>
+      <polygon points="140,60 140,200 70,240 70,100" fill="#2a1f14" opacity="0.9"/>
+      <circle cx="70" cy="30" r="16" fill="#4cc9f0" opacity="0.8"/>
+    </g>
+  </g>
+
+  <g opacity="0.9">
+    <text x="60" y="820" fill="rgba(255,255,255,0.55)" font-size="22" font-family="ui-sans-serif, system-ui, Segoe UI, Arial">
+      Placeholder SVG  remplacez par une image générée par IA pour le rendu final.
+    </text>
+  </g>
+</svg>
