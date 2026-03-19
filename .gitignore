@@ -7,3 +7,6 @@ grafana/data/
 # Luanti runtime (if you bind-mount)
 minetest/worlds/
 
+luanti_data/
+*.log
+.DS_Store
